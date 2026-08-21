@@ -1,0 +1,4 @@
+using System.ComponentModel.DataAnnotations;
+namespace IT_ELECTIVE_PREFINALS_PROJECT.Models;
+public class DashboardViewModel { public int TotalTickets { get; set; } public int OpenTickets { get; set; } public int ClosedTickets { get; set; } public int HighPriorityTickets { get; set; } public List<Ticket> RecentTickets { get; set; } = []; }
+public class TicketFormViewModel { public int Id { get; set; } [Required, Display(Name = "Customer")] public int CustomerId { get; set; } [Required, Display(Name = "Category")] public int CategoryId { get; set; } [Required, Display(Name = "Priority")] public int PriorityId { get; set; } [Required, Display(Name = "Status")] public int StatusId { get; set; } [Required, StringLength(200)] public string Subject { get; set; } = string.Empty; [Required] public string Description { get; set; } = string.Empty; [Display(Name = "Due date")] public string? DueAt { get; set; } }
