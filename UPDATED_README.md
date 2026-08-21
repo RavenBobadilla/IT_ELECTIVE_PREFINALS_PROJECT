@@ -1,4 +1,4 @@
-# Name : Bobadilla, Raven Ray Marque
+# Name : Bobadilla, Raven Ray Marquez
 # Help Desk System - Prefinals Project - Output
 
 An ASP.NET Core MVC app that connects to a pre-built SQLite database using Entity Framework Core.
