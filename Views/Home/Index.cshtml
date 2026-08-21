@@ -1,8 +1,5 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@model DashboardViewModel
+@{ ViewData["Title"] = "Dashboard"; }
+<div class="d-flex justify-content-between align-items-center mb-4"><div><h1 class="mb-0">Help Desk Dashboard</h1><p class="text-muted mb-0">A quick view of your support tickets.</p></div><a class="btn btn-primary" asp-controller="Tickets" asp-action="Create">+ New ticket</a></div>
+<div class="row g-3 mb-4"><div class="col-md-3"><div class="card stat-card"><div class="card-body"><span>Total tickets</span><strong>@Model.TotalTickets</strong></div></div></div><div class="col-md-3"><div class="card stat-card"><div class="card-body"><span>Open</span><strong class="text-primary">@Model.OpenTickets</strong></div></div></div><div class="col-md-3"><div class="card stat-card"><div class="card-body"><span>Closed</span><strong class="text-success">@Model.ClosedTickets</strong></div></div></div><div class="col-md-3"><div class="card stat-card"><div class="card-body"><span>High / critical</span><strong class="text-danger">@Model.HighPriorityTickets</strong></div></div></div></div>
+<div class="card shadow-sm"><div class="card-header bg-white d-flex justify-content-between"><h5 class="mb-0">Recent tickets</h5><a asp-controller="Tickets" asp-action="Index">View all</a></div><div class="table-responsive"><table class="table mb-0"><thead><tr><th>#</th><th>Subject</th><th>Customer</th><th>Priority</th><th>Status</th><th></th></tr></thead><tbody>@foreach (var ticket in Model.RecentTickets) { <tr><td>@ticket.Id</td><td>@ticket.Subject</td><td>@ticket.Customer.CompanyName</td><td><span class="badge priority-@ticket.Priority.Name.ToLower()">@ticket.Priority.Name</span></td><td>@ticket.Status.Name</td><td><a asp-controller="Tickets" asp-action="Details" asp-route-id="@ticket.Id">Open</a></td></tr> }</tbody></table></div></div>

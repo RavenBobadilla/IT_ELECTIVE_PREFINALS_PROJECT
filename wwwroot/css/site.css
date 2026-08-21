@@ -29,3 +29,12 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+.stat-card { border: 0; box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); }
+.stat-card span { display: block; color: #6c757d; font-size: .9rem; }
+.stat-card strong { display: block; font-size: 2rem; margin-top: .25rem; }
+.priority-critical, .priority-high { background: #dc3545; }
+.priority-medium { background: #fd7e14; }
+.priority-low { background: #198754; }
+.comment { border-bottom: 1px solid #e9ecef; padding: .75rem 0; }
+.description-text { white-space: pre-wrap; }
